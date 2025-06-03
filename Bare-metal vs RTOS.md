@@ -2,6 +2,7 @@
 When working with STM32 microcontrollers, developers often face a fundamental decision early in the project: Bare-metal or RTOS?
 Both approaches have distinct trade-offs and are suited for different use cases. Here's a practical comparison to help understand which fits your needs — especially if you're just starting out or working on performance-critical systems.
 
+
 | **Feature / Aspect**     | **Bare-metal**                                                                                                      | **RTOS (Real-Time Operating System)**                                                                                      |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | **Definition**           | Runs directly on the hardware without any operating system.                                                         | An OS designed for real-time embedded applications, providing multitasking via scheduling.                                 |
@@ -11,7 +12,8 @@ Both approaches have distinct trade-offs and are suited for different use cases.
 | **Use Cases**            | Ideal for simple tasks: blinking LEDs, reading sensors, basic control logic.                                        | Best for systems needing concurrency: IoT hubs, GUIs, industrial control, audio processing, robotics.                      |
 | **Timing / Determinism** | Highly deterministic in small systems; you control everything.                                                      | Real-time behavior is possible but depends on task design, scheduling strategy, and configuration.                         |
 
-Why I'm Choosing Bare-Metal (For Now)
+
+# Why I'm Choosing Bare-Metal (For Now)
 In this project, I’m starting bare-metal. Why?
 
 It’s important to understand the hardware and peripheral registers deeply before introducing abstractions.
