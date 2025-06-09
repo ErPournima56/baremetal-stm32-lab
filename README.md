@@ -27,6 +27,13 @@ Bare-metal programming means:
 
 You control everything — initialization, configuration, main loop, and interrupt service routines.
 
+For this project I'm using official reference materials:
+
+- [PM0214](https://www.st.com/resource/en/programming_manual/dm00042534.pdf) — **Cortex-M0+ Programming Manual**
+- [RM0368](https://www.st.com/resource/en/reference_manual/dm00096844.pdf) — **STM32F0 Reference Manual**
+- [STM32F030x6/x8 Datasheet](https://www.st.com/resource/en/datasheet/stm32f030f4.pdf) — **Microcontroller Datasheet**
+
+
 ## ⚡ Real Applications of Bare-Metal Programming
 
 - **Low-cost embedded devices** where OS is unnecessary
