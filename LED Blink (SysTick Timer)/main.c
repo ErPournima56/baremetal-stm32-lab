@@ -24,7 +24,7 @@ void Init_Systick()
 {
 	STK_LOAD = 83999 ;	//enter the start value where the timer has to start downcounting
 	STK_VAL = 0 ;		// Clear current value
-	STK_CTRL = 0x07 ; 		//Counter Enable = 1  //Exception Request Enable = 1
+	STK_CTRL = 0x05 ; 		//Counter Enable = 1  //Exception Request Enable = 0
 				//Clock Source Selection = Processor Clock (AHB) = 1
  	 	 	 	 //Countflag is a readable bit
 }
@@ -66,7 +66,12 @@ int main(void)
 	Init_LED() ;
    	while(1)
 	{
-		GPIOA_ODR ^= ( 1 << 5 )	;		//^ - Toggle
-		delay_ms(60000) ;		//60000 ms = 60 seconds
+		//GPIOA_ODR ^= ( 1 << 5 )	;		//^ - Toggle
+		//delay_ms(6000) ;		//60000 ms = 60 seconds
+		
+   		 GPIOA_ODR |= (1 << 5);  // Turn ON
+ 		 delay_ms(500) ;
+    		 GPIOA_ODR &= ~(1 << 5); // Turn OFF
+		 delay_ms(500) ;
 	}
 }
