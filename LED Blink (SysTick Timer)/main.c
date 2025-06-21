@@ -10,10 +10,10 @@
 //Define peripheral registers
 #define  RCC_AHB1ENR	(*(volatile uint32_t*)0x40023830)		//enables clock for peripherals*
 #define  GPIOA_MODER    (*(volatile uint32_t*)0x40020000)		//Sets the mode input / output for GPIO pins
-#define GPIOA_ODR 		(*(volatile uint32_t*)0x40020014)		//Control the output value of the GPIO pins
+#define GPIOA_ODR 	(*(volatile uint32_t*)0x40020014)		//Control the output value of the GPIO pins
 #define STK_CTRL 	(*(volatile uint32_t*)0xE000E010)
 #define STK_LOAD 	(*(volatile uint32_t*)0xE000E014)
-#define STK_VAL    (*(volatile uint32_t*)0xE000E018)
+#define STK_VAL   	 (*(volatile uint32_t*)0xE000E018)
 #define STK_CALIB	(*(volatile uint32_t*)0xE000E01C)
 //volatile means dont optimize or cache this
 //volatile coz its value at the address can change anytime
@@ -44,7 +44,7 @@ void delay_ms(uint32_t ms)
 	int count ;
 	for(count = 0 ; count < ms ; count++)
 	{
-		while ((STK_CTRL & (1 << 16)) == 0) ;	// Wait for COUNTFLAG (bit 16 of STK_CTRL) to become 1
+		while ((STK_CTRL & (1 << 16)) == 1) ;						// Wait for COUNTFLAG (bit 16 of STK_CTRL) to become 1
 												// This means the SysTick timer has counted down to 0
 												// (1 << 16):
 												//   This creates a bitmask like 0x00010000, which isolates bit 16
